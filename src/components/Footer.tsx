@@ -7,8 +7,6 @@ import {
   LinkedinIcon,
   FacebookIcon,
   InstagramIcon,
-  TwitterXIcon,
-  YoutubeIcon,
   MapPinIcon,
   MailIcon,
 } from './Icons';
@@ -34,16 +32,16 @@ export default function Footer() {
                 className="w-9 h-9 rounded-[8px] shadow-[0_0_12px_rgba(199,244,74,0.2)] group-hover:scale-105 transition-transform"
               />
               <span className="font-sans font-bold text-lg text-[#f1f4fc] tracking-tight">
-                Dayarathna<span className="text-[0.65em] align-super text-[#c7f44a] ml-0.5">®</span>
+                Dayarathna
               </span>
             </Link>
             <p className="text-xs leading-relaxed text-[#9da9bf] mb-4 font-sans">
-              Software Engineer &amp; Systems Researcher at University of Moratuwa. Official open-source utility catalogue, CLI packages, and desktop tools.
+              Computer Science &amp; Engineering undergraduate at the University of Moratuwa. Exploring systems architecture, software design, networks, and DevOps.
             </p>
             <div className="flex flex-col gap-2 font-mono text-[11px]">
               <div className="inline-flex items-center gap-2 text-[#c7f44a] bg-[#c7f44a]/[0.08] border border-[#c7f44a]/20 px-3 py-1 rounded-full w-fit mb-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#c7f44a] shadow-[0_0_8px_#c7f44a] animate-pulse"></span>
-                <span>Active software release pipeline</span>
+                <span>Open to conversations &amp; connections</span>
               </div>
               <span className="inline-flex items-center gap-2 text-[#8fa1bc]">
                 <MapPinIcon className="w-3.5 h-3.5 text-[#c7f44a]" />
@@ -136,24 +134,6 @@ export default function Footer() {
               className="w-9 h-9 rounded-full border border-[#aac1e0]/20 bg-white/[0.03] grid place-items-center text-[#a0acc0] hover:text-[#c7f44a] hover:border-[#c7f44a]/50 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f44a]"
             >
               <InstagramIcon className="w-4 h-4" />
-            </a>
-            <a
-              href="https://x.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X (Twitter)"
-              className="w-9 h-9 rounded-full border border-[#aac1e0]/20 bg-white/[0.03] grid place-items-center text-[#a0acc0] hover:text-[#c7f44a] hover:border-[#c7f44a]/50 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f44a]"
-            >
-              <TwitterXIcon className="w-3.5 h-3.5" />
-            </a>
-            <a
-              href="https://youtube.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-              className="w-9 h-9 rounded-full border border-[#aac1e0]/20 bg-white/[0.03] grid place-items-center text-[#a0acc0] hover:text-[#c7f44a] hover:border-[#c7f44a]/50 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f44a]"
-            >
-              <YoutubeIcon className="w-4 h-4" />
             </a>
           </div>
         </div>

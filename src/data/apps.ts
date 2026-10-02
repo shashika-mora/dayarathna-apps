@@ -16,7 +16,7 @@ export const APPS: AppItem[] = [
       'No compiled installer is released. The interactive switch script can be run directly from the GitHub repository.',
     sourceUrl: 'https://github.com/shashika-mora/power-plan-switcher',
     supportUrl: 'https://github.com/shashika-mora/power-plan-switcher/issues',
-    license: 'Open Source',
+    license: 'Public Repository (Unlicensed)',
     techStack: ['Windows Batch', 'powercfg.exe'],
     features: [
       'Active plan detection: queries the current active scheme using powercfg /getactivescheme',
@@ -55,7 +55,7 @@ export const APPS: AppItem[] = [
     features: [
       'Telemetry dashboard: monitors CPU load, RAM usage, and drive information',
       'Cleanup preview: scans Windows temp, browser caches, and development caches with size estimates before action',
-      'SQLite history log: records cleanup actions to history.db before execution'
+      'SQLite history log: records operation history before execution'
     ],
     installation: [
       'Clone https://github.com/shashika-mora/SystemMate',
@@ -95,7 +95,7 @@ export const APPS: AppItem[] = [
       'Reversible power plans: records initial plan and restores it when the game exits',
       'Interrupted session recovery: detects unfinished sessions on startup to restore original plan',
       'Steam manifest scanning: discovers locally installed Steam games with manual path entry support',
-      'Local SQLite storage: persists game library and session records in %LOCALAPPDATA%\\GameBooster'
+      'Local SQLite storage: persists game library and session records in %LOCALAPPDATA%\\GameBooster\\gamebooster.db'
     ],
     installation: [
       'Clone https://github.com/shashika-mora/GameBooster',
@@ -133,7 +133,7 @@ export const APPS: AppItem[] = [
     installation: [
       'Clone https://github.com/shashika-mora/DevAtlas',
       'Install .NET 10 SDK with Avalonia UI support',
-      'Run dotnet run --project src/DevAtlas.Desktop'
+      'Run dotnet run --project src/DevAtlas.App'
     ],
     requirements: [
       'Windows 10/11, macOS, or Linux',
@@ -146,23 +146,23 @@ export const APPS: AppItem[] = [
     name: 'AI Companion',
     tagline: 'Desktop AI companion with PySide6 overlay and persistent local SQLite memory.',
     description:
-      'A native Windows desktop companion built in Python and PySide6 featuring a desktop overlay, persistent local SQLite memory, and speech recognition.',
+      'A Windows desktop companion built in Python with persistent local SQLite memory, currently evolving from an interactive CLI prototype towards a PySide6 desktop overlay.',
     category: 'AI & Automation',
     platforms: ['Windows'],
     status: 'In development',
     image: '/apps/ai-companion/preview.png',
     downloadAvailable: false,
     downloadNote:
-      'Active prototype (v0.3). Can be executed locally via Python and PySide6.',
+      'Early prototype (v0.1 CLI). PySide6 GUI interface is currently in active development.',
     sourceUrl: 'https://github.com/shashika-mora/ai-companion',
     supportUrl: 'https://github.com/shashika-mora/ai-companion/issues',
     license: 'MIT',
     techStack: ['Python', 'PySide6', 'SQLite'],
     features: [
-      'PySide6 desktop overlay: native character window overlay on Windows',
-      'Persistent local memory: stores conversation context and identity state in SQLite',
-      'Speech input: microphone input with real-time speech recognition pipeline',
-      'Tool execution bridge: permissioned execution for local tools and WSL2 environments'
+      'PySide6 desktop overlay: native desktop interface prototype in development',
+      'Persistent local memory: stores conversation context and persona state in local SQLite (companion.db)',
+      'Speech input: roadmap concept for microphone input and speech recognition',
+      'Tool execution bridge: roadmap concept for local system commands and WSL2 environments'
     ],
     installation: [
       'Clone https://github.com/shashika-mora/ai-companion',
@@ -185,9 +185,9 @@ export const APPS: AppItem[] = [
     id: 'wife-passwords',
     slug: 'wife-passwords',
     name: 'Wi-Fi Security Inspector',
-    tagline: 'Windows WLAN profile enumerator and security configuration diagnostic utility.',
+    tagline: 'Windows WLAN profile enumerator and key viewer via native netsh.',
     description:
-      'An interactive Windows batch script that enumerates registered Wi-Fi profiles and inspects connection settings and security keys using the native Windows WLAN service.',
+      'An interactive Windows command script that enumerates registered Wi-Fi profiles and inspects connection settings and security keys using the native Windows WLAN service.',
     category: 'Network Diagnostics',
     platforms: ['Windows'],
     status: 'In development',
@@ -197,7 +197,7 @@ export const APPS: AppItem[] = [
     sourceUrl: 'https://github.com/shashika-mora/wife-passwords',
     supportUrl: 'https://github.com/shashika-mora/wife-passwords/issues',
     license: 'MIT',
-    techStack: ['Windows Batch', 'WLAN API'],
+    techStack: ['Windows Command Script', 'netsh wlan'],
     features: [
       'Profile enumeration: queries registered Wi-Fi networks using netsh wlan show profiles',
       'Security configuration inspection: retrieves authentication type and encryption cipher',
@@ -205,7 +205,7 @@ export const APPS: AppItem[] = [
     ],
     installation: [
       'Clone https://github.com/shashika-mora/wife-passwords',
-      'Right-click wifi_passwords.bat and select Run as administrator',
+      'Right-click show_wifi.cmd and select Run as administrator',
       'Select option S to show profiles and enter the profile number'
     ],
     requirements: [
