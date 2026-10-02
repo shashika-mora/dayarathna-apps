@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgWifi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050810" />
+      <stop offset="50%" stop-color="#0b1322" />
+      <stop offset="100%" stop-color="#060912" />
+    </linearGradient>
+    <radialGradient id="greenWifiGlow" cx="70%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="limeWifiGlow" cx="20%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#c7f44a" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#c7f44a" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="gridWifi" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#ffffff" stroke-opacity="0.03" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="800" height="400" fill="url(#bgWifi)" />
+  <rect width="800" height="400" fill="url(#gridWifi)" />
+  <rect width="800" height="400" fill="url(#greenWifiGlow)" />
+  <rect width="800" height="400" fill="url(#limeWifiGlow)" />
+
+  <!-- Terminal Window Container -->
+  <g transform="translate(60, 45)">
+    <rect x="0" y="0" width="680" height="310" rx="14" fill="#060b13" stroke="#1b273b" stroke-width="1.5" />
+    
+    <!-- Titlebar -->
+    <rect x="0" y="0" width="680" height="38" rx="14" fill="#0d1522" />
+    <rect x="0" y="24" width="680" height="14" fill="#0d1522" />
+    <line x1="0" y1="38" x2="680" y2="38" stroke="#1b273b" stroke-width="1" />
+
+    <circle cx="22" cy="19" r="5" fill="#ef4444" opacity="0.8" />
+    <circle cx="38" cy="19" r="5" fill="#eab308" opacity="0.8" />
+    <circle cx="54" cy="19" r="5" fill="#22c55e" opacity="0.8" />
+    <text x="340" y="23" fill="#64748b" font-family="ui-monospace, monospace" font-size="11" text-anchor="middle" letter-spacing="1">WINDOWS WLAN SERVICE // SECURITY KEY INSPECTOR</text>
+
+    <!-- Terminal Content Area -->
+    <g transform="translate(24, 56)" font-family="ui-monospace, monospace">
+      <text x="0" y="14" fill="#64748b" font-size="10">&gt; netsh wlan show profiles</text>
+      
+      <!-- Interactive Menu Banner -->
+      <g transform="translate(0, 24)">
+        <rect x="0" y="0" width="632" height="42" rx="8" fill="#0c1626" stroke="#1e2c44" stroke-width="1" />
+        <text x="16" y="26" fill="#c7f44a" font-size="12" font-weight="bold">[S] Show Profiles   [A] About Tool   [E] Exit Console</text>
+        <text x="616" y="26" fill="#94a3b8" font-size="11" text-anchor="end">Status: Ready</text>
+      </g>
+
+      <!-- Discovered Profiles & Details Grid -->
+      <g transform="translate(0, 78)">
+        <!-- Discovered SSIDs list -->
+        <rect x="0" y="0" width="290" height="152" rx="8" fill="#080f1a" stroke="#1a273c" stroke-width="1" />
+        <text x="14" y="22" fill="#64748b" font-size="10">ENUMERATED WLAN PROFILES (4)</text>
+
+        <g transform="translate(14, 38)" font-size="11">
+          <text x="0" y="14" fill="#38bdf8">[1] FiberNet_5G_Home</text>
+          <text x="0" y="38" fill="#ffffff" font-weight="600">[2] SLT-Fibre-Office (selected)</text>
+          <text x="0" y="62" fill="#cbd5e1">[3] Shashika_Hotspot</text>
+          <text x="0" y="86" fill="#cbd5e1">[4] University_WiFi</text>
+        </g>
+
+        <!-- Selected Profile Security Details -->
+        <g transform="translate(304, 0)">
+          <rect x="0" y="0" width="328" height="152" rx="8" fill="#0b172a" stroke="#22c55e" stroke-opacity="0.4" stroke-width="1" />
+          <text x="16" y="22" fill="#22c55e" font-size="10" font-weight="bold">PROFILE SECURITY AUDIT: SLT-Fibre-Office</text>
+
+          <g transform="translate(16, 38)" font-size="11">
+            <text x="0" y="14" fill="#94a3b8">Authentication:</text>
+            <text x="140" y="14" fill="#ffffff">WPA2-Personal</text>
+
+            <text x="0" y="36" fill="#94a3b8">Cipher Suite:</text>
+            <text x="140" y="36" fill="#ffffff">CCMP (AES)</text>
+
+            <text x="0" y="58" fill="#94a3b8">Security Key:</text>
+            <text x="140" y="58" fill="#c7f44a" font-weight="bold">Present (Cleartext inspected)</text>
+
+            <text x="0" y="80" fill="#94a3b8">Connection Mode:</text>
+            <text x="140" y="80" fill="#ffffff">Auto Connect Enabled</text>
+
+            <line x1="0" y1="92" x2="296" y2="92" stroke="#1e2c45" stroke-width="1" />
+            <text x="0" y="104" fill="#64748b" font-size="9">Requires local administrative privileges to reveal key content.</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
