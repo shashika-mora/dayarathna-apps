@@ -18,7 +18,7 @@ export default function Footer() {
               alt="Shashika Dayarathna logo"
               width={30}
               height={30}
-              className="w-[30px] h-[30px] rounded-md"
+              className="w-[30px] h-[30px] rounded-[8px] shadow-[0_0_10px_rgba(199,244,74,0.18)]"
             />
           </Link>
           <span className="text-xs text-[#9da9bf]">

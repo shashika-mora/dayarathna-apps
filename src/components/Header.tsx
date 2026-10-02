@@ -16,7 +16,7 @@ export default function Header() {
             alt="Shashika Dayarathna logo"
             width={38}
             height={38}
-            className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px] rounded-md transition-transform group-hover:scale-105"
+            className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px] rounded-[8px] sm:rounded-[10px] shadow-[0_0_14px_rgba(199,244,74,0.22)] group-hover:shadow-[0_0_24px_rgba(199,244,74,0.45)] transition-all"
             priority
           />
           <span className="font-mono text-xs uppercase tracking-widest text-[#9da9bf] border-l border-white/10 pl-2.5 ml-0.5">
