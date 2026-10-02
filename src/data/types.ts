@@ -1,6 +1,6 @@
-export type Platform = 'Windows' | 'macOS' | 'Linux' | 'Cross-platform' | 'Web';
+export type Platform = 'Windows' | 'macOS' | 'Linux' | 'Cross-platform';
 
-export type ReleaseStatus = 'In development' | 'Preview' | 'Beta' | 'Stable' | 'Archived';
+export type ReleaseStatus = 'In development' | 'Preview' | 'Beta' | 'Stable';
 
 export interface Screenshot {
   url: string;
@@ -28,9 +28,7 @@ export interface AppItem {
   category: string;
   platforms: Platform[];
   status: ReleaseStatus;
-  featured?: boolean;
-  bannerImage?: string;
-  iconImage?: string;
+  image?: string;
   
   // Downloads & Source
   downloadAvailable: boolean;
@@ -48,6 +46,6 @@ export interface AppItem {
   features: string[];
   installation: string[];
   requirements?: string[];
-  techStack?: string[];
+  techStack: string[];
   screenshots?: Screenshot[];
 }

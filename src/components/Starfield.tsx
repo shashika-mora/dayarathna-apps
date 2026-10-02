@@ -8,6 +8,7 @@ interface Star {
   r: number;
   d: number;
   phase: number;
+  lime: boolean;
 }
 
 export default function Starfield() {
@@ -31,19 +32,19 @@ export default function Starfield() {
     const resize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
-      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.6);
       canvas.width = Math.round(width * dpr);
       canvas.height = Math.round(height * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      // Star density reduced on small viewports
-      const starCount = Math.min(130, Math.max(35, Math.round((width * height) / 9000)));
-      stars = Array.from({ length: starCount }, () => ({
+      const count = Math.min(180, Math.max(70, Math.round((width * height) / 8000)));
+      stars = Array.from({ length: count }, () => ({
         x: Math.random(),
         y: Math.random(),
-        r: 0.4 + Math.random() * 0.9,
-        d: 0.2 + Math.random() * 0.8,
+        r: 0.35 + Math.random() * 0.95,
+        d: 0.25 + Math.random() * 0.75,
         phase: Math.random() * Math.PI * 2,
+        lime: Math.random() < 0.12, // 12% subtle lime stars
       }));
 
       draw(0);
@@ -53,16 +54,24 @@ export default function Starfield() {
       elapsed += dt;
       ctx.clearRect(0, 0, width, height);
       const motion = !mediaQuery.matches;
+      const scrollY = window.scrollY || 0;
 
       for (const s of stars) {
-        // Slow vertical and horizontal celestial drift
-        const x = (s.x * width + (motion ? elapsed * 0.003 * s.d : 0) + width) % width;
-        const y = (s.y * height + (motion ? -elapsed * 0.0015 * s.d : 0) + height) % height;
-        const opacity = motion
-          ? 0.35 + 0.3 * (0.5 + 0.5 * Math.sin(elapsed * 0.0008 + s.phase))
+        const x = (s.x * width + (motion ? elapsed * 0.0035 * s.d : 0) + width) % width;
+        const y =
+          (s.y * height +
+            (motion ? -elapsed * 0.0018 * s.d - scrollY * 0.015 * s.d : 0) +
+            height * 100) %
+          height;
+
+        const alpha = motion
+          ? 0.35 + 0.25 * (0.5 + 0.5 * Math.sin(elapsed * 0.0006 + s.phase))
           : 0.45;
 
-        ctx.fillStyle = `rgba(195, 218, 254, ${opacity})`;
+        ctx.fillStyle = s.lime
+          ? `rgba(190, 225, 154, ${alpha * 0.9})`
+          : `rgba(190, 212, 247, ${alpha})`;
+
         ctx.beginPath();
         ctx.arc(x, y, s.r, 0, Math.PI * 2);
         ctx.fill();
@@ -92,6 +101,9 @@ export default function Starfield() {
     };
 
     window.addEventListener('resize', resize, { passive: true });
+    window.addEventListener('scroll', () => {
+      if (mediaQuery.matches) draw(0);
+    }, { passive: true });
     document.addEventListener('visibilitychange', start);
     mediaQuery.addEventListener('change', start);
 
@@ -112,10 +124,10 @@ export default function Starfield() {
       className="fixed inset-0 pointer-events-none z-[-1] overflow-hidden"
       style={{
         background:
-          'radial-gradient(ellipse at 80% 20%, rgba(30, 42, 68, 0.28), transparent 50%), radial-gradient(ellipse at 20% 80%, rgba(20, 28, 48, 0.32), transparent 55%), #05070d',
+          'radial-gradient(ellipse at 75% 24%, rgba(37, 35, 68, 0.19), transparent 52%), radial-gradient(ellipse at 20% 75%, rgba(23, 44, 68, 0.2), transparent 55%), #05070d',
       }}
     >
-      <canvas ref={canvasRef} className="block w-full h-full" />
+      <canvas ref={canvasRef} id="starfield" className="block w-full h-full" />
     </div>
   );
 }

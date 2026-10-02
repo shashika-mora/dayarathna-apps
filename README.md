@@ -1,26 +1,79 @@
 # dayarathna-apps
 
-My personal app catalogue at [apps.dayarathna.com](https://apps.dayarathna.com), featuring software utilities, downloads, documentation, and links to source code.
+<p>
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Firebase_Hosting-FFCA28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase Hosting" />
+</p>
 
-## Overview
+Static application catalogue website for Shashika Dayarathna, deployed at [apps.dayarathna.com](https://apps.dayarathna.com).
 
-A central catalogue and distribution hub for software tools and utilities built by Shashika Dayarathna.
+## Scope
 
-- **Fast & Static**: Next.js App Router with static HTML export.
-- **Zero Tracking**: No runtime trackers, analytics, or cookies.
-- **Open Repositories**: Direct links to public source repositories for every application.
+This repository contains only the catalogue, documentation, and discovery pages. Each featured application source code lives in its own standalone repository (e.g., `power-plan-switcher`, `SystemMate`, `GameBooster`, `DevAtlas`, `ai-companion`, `wife-passwords`). This repository does not commit compiled binaries or installer packages.
 
-## Applications
+## Stack
 
-- **SmartPowerManager**: Lightweight Windows utility for checking and switching power schemes via native powercfg.
-- **SystemMate**: Honest Windows cleanup and hardware telemetry utility built with WinUI 3, .NET 8, and SQLite audit logging.
-- **GameBooster**: Offline-first Windows desktop utility for launching games with explicit, reversible session settings.
-- **AI Companion**: Extensible native desktop AI companion (Code Name: Weapon) built in Python and PySide6 with persistent SQLite memory.
-- **DevAtlas**: Offline-first developer workspace manager and local Git telemetry inspector built with Avalonia UI and .NET 10.
-- **Wi-Fi Security Inspector**: Interactive Windows WLAN utility for enumerating profiles and inspecting security cipher configurations.
+| Area | Technology | Purpose |
+| --- | --- | --- |
+| Framework | Next.js 16 (App Router) | Static site generation and routing |
+| Language | TypeScript 5.8 | Strict type checking and data contracts |
+| Styling | Tailwind CSS v4 & custom CSS | Celestial styling matching dayarathna.com |
+| Output | Static HTML (`output: 'export'`) | Static asset export to `out/` |
+| Hosting | Firebase Hosting | Targeted deployment to `shashika-dev-apps` |
 
-## Links
+## Run locally
 
-- **App Catalogue**: [https://apps.dayarathna.com](https://apps.dayarathna.com)
-- **Main Portfolio**: [https://dayarathna.com](https://dayarathna.com)
-- **GitHub Profile**: [https://github.com/shashika-mora](https://github.com/shashika-mora)
+Prerequisites: Node.js 20+ and npm.
+
+```sh
+# Clone repository
+git clone https://github.com/shashika-mora/dayarathna-apps.git
+cd dayarathna-apps
+
+# Install dependencies
+npm install
+
+# Start local development server
+npm run dev
+```
+
+Open `http://localhost:3000` in your browser.
+
+## Validate
+
+```sh
+# Run TypeScript compilation check
+npm run typecheck
+
+# Run ESLint validation
+npm run lint
+
+# Generate production static export
+npm run build
+```
+
+The static site export will be generated in the `out/` directory.
+
+## Catalogue data
+
+All application records are managed strictly in `src/data/apps.ts` through the typed `AppItem` contract defined in `src/data/types.ts`.
+
+To add or update an application:
+1. Open `src/data/apps.ts`.
+2. Add a new entry conforming to `AppItem` (specifying `id`, `slug`, `name`, `tagline`, `description`, `category`, `platforms`, `status`, `techStack`, `features`, `installation`, `requirements`, and `sourceUrl`).
+3. If release binaries exist, set `downloadAvailable: true` and specify `downloadUrl`. Otherwise, set `downloadAvailable: false` and describe the release status in `downloadNote`.
+4. Run `npm run typecheck && npm run build` to verify route generation at build time.
+
+## Deployment
+
+Deployments target only the dedicated `apps` hosting site on project `shashika-dev`:
+
+```sh
+npx firebase-tools deploy --only hosting:apps --project shashika-dev
+```
+
+## About the maintainer
+
+Maintained by Shashika Dayarathna. Main portfolio: [https://dayarathna.com](https://dayarathna.com).
