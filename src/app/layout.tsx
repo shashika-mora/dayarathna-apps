@@ -45,10 +45,10 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${ibmPlexMono.variable} ${instrumentSerif.variable} dark`}
     >
-      <body className="min-h-screen flex flex-col bg-[#05070d] text-[#f1f4fc] antialiased selection:bg-[#c7f44a] selection:text-[#070a10]">
+      <body className="min-h-screen flex flex-col text-[#f1f4fc] antialiased selection:bg-[#c7f44a] selection:text-[#070a10]">
         <Starfield />
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 relative">{children}</main>
         <Footer />
       </body>
     </html>

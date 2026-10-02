@@ -7,15 +7,22 @@ export default function HomePage() {
   return (
     <div>
       {/* Spacious Hero Opening Structure matching dayarathna.com */}
-      <section className="portfolio-container pt-12 sm:pt-16 pb-16 sm:pb-24 flex flex-col justify-center min-h-[calc(85svh-94px)]" id="home">
+      <section className="portfolio-container relative pt-12 sm:pt-16 pb-16 sm:pb-24 flex flex-col justify-center min-h-[calc(85svh-94px)]" id="home">
+        {/* Galaxy Anchor Element for celestial particle gathering */}
+        <div
+          className="galaxy-field particle-anchor"
+          data-particle="galaxy"
+          aria-hidden="true"
+        />
+
         {/* Hero Meta */}
-        <div className="flex justify-between items-center text-xs font-mono text-[#9da9bf] tracking-wider uppercase mb-8 sm:mb-12">
+        <div className="relative z-10 flex justify-between items-center text-xs font-mono text-[#9da9bf] tracking-wider uppercase mb-8 sm:mb-12">
           <span>SHASHIKA DAYARATHNA</span>
           <span>SOFTWARE CATALOGUE</span>
         </div>
 
         {/* Hero Title */}
-        <div className="mb-8 sm:mb-10 max-w-4xl">
+        <div className="relative z-10 mb-8 sm:mb-10 max-w-4xl">
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[108px] font-medium tracking-[-0.065em] leading-[0.98] text-[#f1f4fc]">
             Personal <span className="serif">software.</span><br />
             Built to solve.
@@ -23,7 +30,7 @@ export default function HomePage() {
         </div>
 
         {/* Hero Intro & Actions */}
-        <div className="max-w-xl">
+        <div className="relative z-10 max-w-xl">
           <p className="text-lg sm:text-xl text-[#b8c3d6] leading-relaxed mb-8">
             A catalogue of standalone desktop applications, utilities, and developer tools built and maintained by Shashika Dayarathna. Each project links directly to its source repository.
           </p>
@@ -74,13 +81,6 @@ export default function HomePage() {
               <strong className="block text-base font-medium text-[#f1f4fc] mb-1">Factual Development Tracking</strong>
               <p className="leading-relaxed">
                 Applications are marked according to their verified state. Unconfirmed releases are clearly identified as in development, and working download links are provided only when release assets exist.
-              </p>
-            </div>
-
-            <div className="border-t border-white/[0.08] pt-4">
-              <strong className="block text-base font-medium text-[#f1f4fc] mb-1">Static Architecture</strong>
-              <p className="leading-relaxed">
-                Exported as pre-rendered static HTML with zero tracking, no runtime backend, and fast delivery via Firebase Hosting.
               </p>
             </div>
           </div>
