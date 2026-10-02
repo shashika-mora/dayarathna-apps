@@ -9,7 +9,7 @@ export default function Header() {
         <Link
           href="/"
           className="brand group flex items-center gap-3 transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c7f44a]"
-          aria-label="Shashika Apps Home"
+          aria-label="Shashika’s Apps Home"
         >
           <Image
             src="/favicon.svg"

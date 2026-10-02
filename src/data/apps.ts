@@ -31,7 +31,7 @@ export const APPS: AppItem[] = [
     ],
     requirements: [
       'Windows 10 or Windows 11',
-      'Native powercfg.exe command line tool'
+      'Native powercfg.exe command line tool (standard user privileges suffice for switching preset schemes)'
     ]
   },
   {
@@ -205,13 +205,14 @@ export const APPS: AppItem[] = [
     ],
     installation: [
       'Clone https://github.com/shashika-mora/wife-passwords',
-      'Right-click show_wifi.cmd and select Run as administrator',
+      'Inspect show_wifi.cmd in any text editor to verify command logic before running',
+      'Right-click show_wifi.cmd and select Run as administrator (required by Windows to retrieve cleartext profile keys via netsh)',
       'Select option S to show profiles and enter the profile number'
     ],
     requirements: [
       'Windows 10 or 11',
       'WLAN adapter',
-      'Administrator privileges for key recovery'
+      'Administrator privileges (required by Windows netsh to reveal stored profile credentials)'
     ]
   }
 ];

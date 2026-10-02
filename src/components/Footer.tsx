@@ -70,22 +70,22 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/" className="text-[#c7f44a] font-medium">
-                  Apps &amp; Tools
+                  Shashika’s Apps
                 </Link>
               </li>
               <li>
                 <a href="https://blog.dayarathna.com" className="text-[#9da9bf] hover:text-[#c7f44a] transition-colors">
-                  Engineering Blog
+                  Shashika’s Blog
                 </a>
               </li>
               <li>
                 <a href="https://academic.dayarathna.com" className="text-[#9da9bf] hover:text-[#c7f44a] transition-colors">
-                  Academic Portal
+                  Shashika’s Academic Space
                 </a>
               </li>
               <li>
                 <a href="https://store.dayarathna.com" className="text-[#9da9bf] hover:text-[#c7f44a] transition-colors">
-                  Digital Store
+                  Shashika’s Store
                 </a>
               </li>
             </ul>
