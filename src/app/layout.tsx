@@ -3,6 +3,7 @@ import { DM_Sans, IBM_Plex_Mono, Instrument_Serif } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BackToTop from '@/components/BackToTop';
 import Starfield from '@/components/Starfield';
 
 const dmSans = DM_Sans({
@@ -50,6 +51,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 relative">{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
