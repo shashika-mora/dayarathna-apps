@@ -1,61 +1,62 @@
 {
   "hosting": {
     "target": "apps",
-    "public": "out",
+    "public": ".",
     "cleanUrls": true,
     "trailingSlash": false,
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**",
+      "**/.*/**",
       "*.md",
       "**/*.md",
       "*.zip",
-      "*.log"
+      "*.tar",
+      "*.gz",
+      "*.log",
+      "doc/**",
+      "docs/**",
+      "package*.json",
+      "node_modules/**",
+      "src/**",
+      "out/**",
+      ".next/**",
+      "tsconfig.json",
+      "next.config.mjs",
+      "postcss.config.mjs",
+      "eslint.config.mjs"
     ],
     "headers": [
       {
-        "source": "_next/static/**",
+        "source": "**/*.@(html|htm)",
         "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, immutable"
-          }
+          { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
         ]
       },
       {
-        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico|woff2|woff)",
+        "source": "/",
         "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, immutable"
-          }
+          { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
         ]
       },
       {
-        "source": "**/*.html",
+        "source": "**/*.@(js|css|json)",
         "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=0, must-revalidate"
-          }
+          { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        ]
+      },
+      {
+        "source": "**/*.@(webp|svg|ico|pdf|png|jpg|jpeg)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }
         ]
       },
       {
         "source": "**",
         "headers": [
-          {
-            "key": "X-Frame-Options",
-            "value": "SAMEORIGIN"
-          },
-          {
-            "key": "X-Content-Type-Options",
-            "value": "nosniff"
-          },
-          {
-            "key": "Referrer-Policy",
-            "value": "strict-origin-when-cross-origin"
-          }
+          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
         ]
       }
     ]
