@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070a10">
+  <meta name="description" content="Offline-first Windows game session launcher with reversible power plans.">
+  <title>GameBooster — Shashika’s Apps</title>
+  <link rel="icon" href="/public/favicon.svg">
+  <link rel="stylesheet" href="/style.css?v=1.0">
+</head>
+
+<body>
+  <div class="space-backdrop" aria-hidden="true"><canvas id="starfield"></canvas></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="portfolio-container header-inner">
+      <a href="/" class="brand" aria-label="Shashika’s Apps Home">
+        <img src="/public/favicon.svg" alt="Shashika Dayarathna logo" class="brand-logo" width="38" height="38">
+        <span class="brand-sub">Apps</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="/" class="active">Catalogue</a>
+        <a href="https://dayarathna.com" target="_blank" rel="noopener noreferrer">Portfolio ↗</a>
+        <a href="https://github.com/shashika-mora" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      </nav>
+
+      <a class="contact-top" href="https://dayarathna.com#contact" target="_blank" rel="noopener noreferrer">
+        <span>Let’s talk</span>
+        <span class="small-dot" aria-hidden="true"></span>
+      </a>
+    </div>
+  </header>
+
+  <main class="portfolio-container" style="padding-top: 48px; padding-bottom: 80px;">
+    <!-- Back to catalogue link -->
+    <div style="margin-bottom: 36px;">
+      <a href="/#catalogue" style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: #9da9bf; transition: color 0.2s;">
+        <span>←</span>
+        <span>Back to catalogue</span>
+      </a>
+    </div>
+
+    <!-- App Header -->
+    <header style="border-bottom: 1px solid var(--line); padding-bottom: 36px; margin-bottom: 40px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #9da9bf; margin-bottom: 16px;">
+        <span>Gaming Utility</span>
+        <span style="color: var(--lime);">In development</span>
+      </div>
+
+      <h1 style="font-size: clamp(38px, 5.5vw, 64px); font-weight: 500; letter-spacing: -0.05em; line-height: 1.1; margin: 0 0 16px; color: #f1f4fc;">
+        GameBooster
+      </h1>
+
+      <p style="font-size: 18px; line-height: 1.6; color: #b8c3d6; max-width: 800px; margin: 0 0 16px;">
+        Offline-first Windows game session launcher with reversible power plans.
+      </p>
+
+      <p style="font-size: 15px; line-height: 1.7; color: #9da9bf; max-width: 800px; margin: 0 0 24px;">
+        An offline-first Windows desktop utility built with WinUI 3 and .NET 8 for launching games with reversible power plan settings that restore on game exit.
+      </p>
+
+      <div class="project-tags" style="margin: 0;"><span>C#</span><span>.NET 8 LTS</span><span>WinUI 3</span><span>SQLite</span></div>
+    </header>
+
+    <!-- Distribution Box -->
+    <div class="distribution-box" style="margin-bottom: 48px;">
+      <div class="dist-info">
+        <h4>Distribution &amp; Availability</h4>
+        <p>Release binaries are not published yet. Build from source via .NET 8 SDK.</p>
+      </div>
+      <div class="dist-actions">
+        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted); padding: 8px 16px; border: 1px solid var(--line); border-radius: 20px;">Download not available yet</span>
+        <a href="https://github.com/shashika-mora/GameBooster" target="_blank" rel="noopener noreferrer" class="button secondary" style="font-size: 12px; padding: 11px 22px;">Source code ↗</a>
+      </div>
+    </div>
+
+    <!-- Layout Grid -->
+    <div style="display: grid; grid-template-columns: 1fr; gap: 48px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px;">
+        <div>
+          <div style="margin-bottom: 36px;">
+        <h2 style="font-size: 20px; font-weight: 600; color: #f1f4fc; margin-bottom: 16px;">Implemented Capabilities</h2>
+        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Reversible power plans: records initial plan and restores it when the game exits</span></li><li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Interrupted session recovery: detects unfinished sessions on startup to restore original plan</span></li><li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Steam manifest scanning: discovers locally installed Steam games with manual path entry support</span></li><li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Local SQLite storage: persists game library and session records in %LOCALAPPDATA%\GameBooster\gamebooster.db</span></li>
+        </ul>
+      </div>
+          <div style="margin-bottom: 36px;">
+        <h2 style="font-size: 20px; font-weight: 600; color: #f1f4fc; margin-bottom: 16px;">Installation &amp; Usage</h2>
+        <div style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: #080d16; padding: 22px;">
+          <ol style="margin: 0; padding-left: 20px; font-family: var(--mono); font-size: 13px; color: #b8c3d6; display: flex; flex-direction: column; gap: 10px;">
+            <li>Clone https://github.com/shashika-mora/GameBooster</li><li>Install .NET 8.0 SDK and Windows App SDK workload</li><li>Run dotnet run or dotnet build --configuration Release</li>
+          </ol>
+        </div>
+      </div>
+          
+        </div>
+
+        <aside style="display: flex; flex-direction: column; gap: 24px;">
+          <div class="spec-card">
+            <div class="spec-card-title">Specifications</div>
+            <div class="spec-list">
+              <div class="spec-row"><span class="spec-label">Platform</span><span class="spec-val">Windows</span></div>
+              <div class="spec-row"><span class="spec-label">Category</span><span class="spec-val">Gaming Utility</span></div>
+              <div class="spec-row"><span class="spec-label">Status</span><span class="spec-val" style="color: var(--lime);">In development</span></div>
+              <div class="spec-row"><span class="spec-label">License</span><span class="spec-val">MIT</span></div>
+              <div style="padding-top: 8px;">
+        <span style="color: #9da9bf; font-size: 12px;">Requirements</span>
+        <span style="display: block; border-radius: 6px; background: rgba(255,255,255,0.03); padding: 6px 10px; font-family: var(--mono); font-size: 11px; color: #b8c3d6; margin-top: 6px;">Windows 10 (build 19041 or higher) or Windows 11</span><span style="display: block; border-radius: 6px; background: rgba(255,255,255,0.03); padding: 6px 10px; font-family: var(--mono); font-size: 11px; color: #b8c3d6; margin-top: 6px;">.NET 8.0 SDK / Runtime</span>
+      </div>
+            </div>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-card-title">Source &amp; Issues</div>
+            <div class="modal-links">
+              <a href="https://github.com/shashika-mora/GameBooster" target="_blank" rel="noopener noreferrer" class="modal-link-item"><span>GitHub repository</span><span>↗</span></a>
+              <a href="https://github.com/shashika-mora/GameBooster/issues" target="_blank" rel="noopener noreferrer" class="modal-link-item"><span>Report an issue</span><span>↗</span></a>
+              <a href="https://dayarathna.com#contact" target="_blank" rel="noopener noreferrer" class="modal-link-item"><span>Contact maintainer</span><span>↗</span></a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Exact Unified Ecosystem Footer -->
+  <div class="site-footer-wrapper">
+    <footer class="site-footer">
+      <div class="footer-directory">
+        <div class="footer-col brand-col">
+          <a href="https://dayarathna.com" class="footer-brand" aria-label="Shashika Dayarathna Home">
+            <img src="/public/favicon.svg" alt="Shashika Dayarathna logo" class="brand-logo" width="36" height="36">
+            <span class="brand-text">Dayarathna</span>
+          </a>
+          <p class="brand-bio">
+            Computer Science &amp; Engineering undergraduate at the University of Moratuwa. Exploring systems architecture, software design, networks, and DevOps.
+          </p>
+          <div class="brand-meta">
+            <div class="status-badge">
+              <span class="pulse-dot"></span>
+              <span>Open to conversations &amp; connections</span>
+            </div>
+            <span class="meta-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+              Moratuwa / Colombo, Sri Lanka
+            </span>
+            <a href="mailto:shashikatheekshana67@gmail.com" class="meta-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              shashikatheekshana67@gmail.com
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Ecosystem</h4>
+          <ul class="footer-links">
+            <li><a href="https://dayarathna.com" class="footer-link">Portfolio &amp; Systems</a></li>
+            <li><a href="https://apps.dayarathna.com" class="footer-link">Shashika’s Apps</a></li>
+            <li><a href="https://blog.dayarathna.com" class="footer-link">Shashika’s Blog</a></li>
+            <li><a href="https://academic.dayarathna.com" class="footer-link">Shashika’s Academic Space</a></li>
+            <li><a href="https://store.dayarathna.com" class="footer-link">Shashika’s Store</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-copy">
+          <span>© <span id="year">2026</span> Shashika Dayarathna. All rights reserved.</span>
+        </div>
+
+        <div class="footer-social-row" aria-label="Social media profiles">
+          <a class="social-icon" href="https://www.linkedin.com/in/shashika-dayarathna-420875359" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4M3.5 9h3v12h-3zM9 9h3v1.6c.8-1.2 1.8-1.9 3.4-1.9 3.3 0 4.1 2.1 4.1 5V21h-3v-6.4c0-1.7-.3-3-2.1-3-1.9 0-2.4 1.4-2.4 3V21H9z"/></svg>
+          </a>
+          <a class="social-icon" href="https://github.com/shashika-mora" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 19c-4 1-4-2-6-2m12 4v-3.9a3.4 3.4 0 0 0-1-2.6c3.3-.4 6.8-1.6 6.8-7.3a5.7 5.7 0 0 0-1.5-4 5.3 5.3 0 0 0-.1-4S18-.2 15 1.7a13.4 13.4 0 0 0-6 0C6-.2 4.8.2 4.8.2a5.3 5.3 0 0 0-.1 4 5.7 5.7 0 0 0-1.5 4c0 5.7 3.5 6.9 6.8 7.3a3.4 3.4 0 0 0-1 2.6V22" transform="translate(0 1) scale(1 .9)"/></svg>
+          </a>
+          <a class="social-icon" href="https://web.facebook.com/shashika.dayarathna.2025/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M15 21v-8h3l.5-4H15V7c0-1.2.4-2 2-2h2V1.5A23 23 0 0 0 16 1c-3 0-5 1.8-5 5v3H8v4h3v8z"/></svg>
+          </a>
+          <a class="social-icon" href="https://www.instagram.com/shashika_daya/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/script.js?v=1.0"></script>
+</body>
+
+</html>
