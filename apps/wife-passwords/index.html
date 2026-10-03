@@ -48,7 +48,7 @@
     <header style="border-bottom: 1px solid var(--line); padding-bottom: 36px; margin-bottom: 40px;">
       <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #9da9bf; margin-bottom: 16px;">
         <span>Network Diagnostics</span>
-        <span style="color: var(--lime);">In development</span>
+        <span style="color: var(--lime);">Completed / Stable CLI</span>
       </div>
 
       <h1 style="font-size: clamp(38px, 5.5vw, 64px); font-weight: 500; letter-spacing: -0.05em; line-height: 1.1; margin: 0 0 16px; color: #f1f4fc;">
@@ -60,20 +60,25 @@
       </p>
 
       <p style="font-size: 15px; line-height: 1.7; color: #9da9bf; max-width: 800px; margin: 0 0 24px;">
-        An interactive Windows command script that enumerates registered Wi-Fi profiles and inspects connection settings and security keys using the native Windows WLAN service.
+        An interactive Windows batch command-line utility to query registered Wi-Fi profiles and inspect detailed security configurations, including cleartext security keys, using native Windows WLAN services.
       </p>
 
-      <div class="project-tags" style="margin: 0;"><span>Windows Command Script</span><span>netsh wlan</span></div>
+      <div class="project-tags" style="margin: 0;"><span>Windows Batch (.cmd)</span><span>netsh wlan</span><span>CLI Utility</span></div>
     </header>
+
+    <!-- Preview Graphic -->
+    <div style="margin-bottom: 40px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #080d16; box-shadow: 0 12px 36px rgba(0,0,0,0.5);">
+      <img src="/apps/wife-passwords/preview.svg" alt="Wi-Fi Security Inspector CLI Preview" style="width: 100%; height: auto; max-height: 420px; object-fit: cover; display: block;">
+    </div>
 
     <!-- Distribution Box -->
     <div class="distribution-box" style="margin-bottom: 48px;">
       <div class="dist-info">
         <h4>Distribution &amp; Availability</h4>
-        <p>No compiled binary required. The utility script is available directly in the GitHub repository.</p>
+        <p>Standalone portable Windows command script (.cmd). Zero build dependencies or runtime installation required—clone the repository or download show_wifi.cmd directly to run.</p>
       </div>
       <div class="dist-actions">
-        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted); padding: 8px 16px; border: 1px solid var(--line); border-radius: 20px;">Download not available yet</span>
+        <a href="https://raw.githubusercontent.com/shashika-mora/wife-passwords/main/show_wifi.cmd" target="_blank" rel="noopener noreferrer" class="button primary" style="font-size: 12px; padding: 11px 22px;">Download script ↗</a>
         <a href="https://github.com/shashika-mora/wife-passwords" target="_blank" rel="noopener noreferrer" class="button secondary" style="font-size: 12px; padding: 11px 22px;">Source code ↗</a>
       </div>
     </div>
@@ -85,14 +90,14 @@
           <div style="margin-bottom: 36px;">
         <h2 style="font-size: 20px; font-weight: 600; color: #f1f4fc; margin-bottom: 16px;">Implemented Capabilities</h2>
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
-          <li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Profile enumeration: queries registered Wi-Fi networks using netsh wlan show profiles</span></li><li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Security configuration inspection: retrieves authentication type and encryption cipher</span></li><li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Cleartext key display: displays security keys when run with administrative privileges</span></li>
+          <li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Profile enumeration: queries and lists all registered wireless networks on demand via netsh wlan show profiles</span></li><li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Security configuration inspection: retrieves connection settings, authentication type, and encryption cipher</span></li><li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Cleartext key display: reveals stored security keys when run from an elevated command prompt</span></li><li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Unicode &amp; UTF-8 support: configured with chcp 65001 to properly render non-ASCII network SSIDs</span></li><li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>100% offline &amp; private: operates strictly locally with zero external network connections or data transmission</span></li>
         </ul>
       </div>
           <div style="margin-bottom: 36px;">
         <h2 style="font-size: 20px; font-weight: 600; color: #f1f4fc; margin-bottom: 16px;">Installation &amp; Usage</h2>
         <div style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: #080d16; padding: 22px;">
           <ol style="margin: 0; padding-left: 20px; font-family: var(--mono); font-size: 13px; color: #b8c3d6; display: flex; flex-direction: column; gap: 10px;">
-            <li>Clone https://github.com/shashika-mora/wife-passwords</li><li>Inspect show_wifi.cmd in any text editor to verify command logic before running</li><li>Right-click show_wifi.cmd and select Run as administrator (required by Windows to retrieve cleartext profile keys via netsh)</li><li>Select option S to show profiles and enter the profile number</li>
+            <li>Clone https://github.com/shashika-mora/wife-passwords or download show_wifi.cmd directly</li><li>Inspect show_wifi.cmd in any text editor to verify command logic before running</li><li>Right-click show_wifi.cmd and select Run as administrator (required by Windows to retrieve cleartext profile keys via netsh)</li><li>Select option [S] to show profiles and enter the profile index number</li>
           </ol>
         </div>
       </div>
@@ -105,11 +110,11 @@
             <div class="spec-list">
               <div class="spec-row"><span class="spec-label">Platform</span><span class="spec-val">Windows</span></div>
               <div class="spec-row"><span class="spec-label">Category</span><span class="spec-val">Network Diagnostics</span></div>
-              <div class="spec-row"><span class="spec-label">Status</span><span class="spec-val" style="color: var(--lime);">In development</span></div>
+              <div class="spec-row"><span class="spec-label">Status</span><span class="spec-val" style="color: var(--lime);">Completed (Stable)</span></div>
               <div class="spec-row"><span class="spec-label">License</span><span class="spec-val">MIT</span></div>
               <div style="padding-top: 8px;">
         <span style="color: #9da9bf; font-size: 12px;">Requirements</span>
-        <span style="display: block; border-radius: 6px; background: rgba(255,255,255,0.03); padding: 6px 10px; font-family: var(--mono); font-size: 11px; color: #b8c3d6; margin-top: 6px;">Windows 10 or 11</span><span style="display: block; border-radius: 6px; background: rgba(255,255,255,0.03); padding: 6px 10px; font-family: var(--mono); font-size: 11px; color: #b8c3d6; margin-top: 6px;">WLAN adapter</span><span style="display: block; border-radius: 6px; background: rgba(255,255,255,0.03); padding: 6px 10px; font-family: var(--mono); font-size: 11px; color: #b8c3d6; margin-top: 6px;">Administrator privileges (required by Windows netsh to reveal stored profile credentials)</span>
+        <span style="display: block; border-radius: 6px; background: rgba(255,255,255,0.03); padding: 6px 10px; font-family: var(--mono); font-size: 11px; color: #b8c3d6; margin-top: 6px;">Windows 10, 11, or Windows Server</span><span style="display: block; border-radius: 6px; background: rgba(255,255,255,0.03); padding: 6px 10px; font-family: var(--mono); font-size: 11px; color: #b8c3d6; margin-top: 6px;">Enabled WLAN adapter</span><span style="display: block; border-radius: 6px; background: rgba(255,255,255,0.03); padding: 6px 10px; font-family: var(--mono); font-size: 11px; color: #b8c3d6; margin-top: 6px;">Administrator privileges (required by Windows netsh to reveal stored profile credentials)</span>
       </div>
             </div>
           </div>

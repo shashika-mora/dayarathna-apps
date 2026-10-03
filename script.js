@@ -247,31 +247,35 @@ const APPS_DATA = {
     name: 'Wi-Fi Security Inspector',
     tagline: 'Windows WLAN profile enumerator and key viewer via native netsh.',
     description:
-      'An interactive Windows command script that enumerates registered Wi-Fi profiles and inspects connection settings and security keys using the native Windows WLAN service.',
+      'An interactive Windows batch command-line utility to query registered Wi-Fi profiles and inspect detailed security configurations, including cleartext security keys, using native Windows WLAN services.',
     category: 'Network Diagnostics',
     platforms: ['Windows'],
-    status: 'In development',
-    downloadAvailable: false,
+    status: 'Completed / Stable CLI',
+    image: 'public/apps/wife-passwords/preview.svg',
+    downloadAvailable: true,
+    downloadUrl: 'https://raw.githubusercontent.com/shashika-mora/wife-passwords/main/show_wifi.cmd',
     downloadNote:
-      'No compiled binary required. The utility script is available directly in the GitHub repository.',
+      'Standalone portable Windows command script (.cmd). Requires zero build dependencies or installation.',
     sourceUrl: 'https://github.com/shashika-mora/wife-passwords',
     supportUrl: 'https://github.com/shashika-mora/wife-passwords/issues',
     license: 'MIT',
-    techStack: ['Windows Command Script', 'netsh wlan'],
+    techStack: ['Windows Batch (.cmd)', 'netsh wlan', 'Windows API', 'CLI Utility'],
     features: [
-      'Profile enumeration: queries registered Wi-Fi networks using netsh wlan show profiles',
-      'Security configuration inspection: retrieves authentication type and encryption cipher',
-      'Cleartext key display: displays security keys when run with administrative privileges'
+      'Profile enumeration: queries and lists all registered wireless networks on demand',
+      'Security configuration inspection: retrieves connection settings, authentication type, and encryption cipher',
+      'Cleartext key display: displays stored network passwords when run with administrative privileges',
+      'Unicode / UTF-8 support: configured with chcp 65001 for non-ASCII network SSIDs',
+      '100% offline & private: operates strictly locally with zero external network telemetry'
     ],
     installation: [
-      'Clone https://github.com/shashika-mora/wife-passwords',
+      'Clone https://github.com/shashika-mora/wife-passwords or download show_wifi.cmd directly',
       'Inspect show_wifi.cmd in any text editor to verify command logic before running',
-      'Right-click show_wifi.cmd and select Run as administrator (required by Windows to retrieve cleartext profile keys via netsh)',
-      'Select option S to show profiles and enter the profile number'
+      'Right-click show_wifi.cmd and select Run as administrator (required by Windows to reveal cleartext profile keys via netsh)',
+      'Select option [S] to show registered profiles and enter the profile index number'
     ],
     requirements: [
-      'Windows 10 or 11',
-      'WLAN adapter',
+      'Windows 10, 11, or Windows Server',
+      'Enabled WLAN adapter with saved network profiles',
       'Administrator privileges (required by Windows netsh to reveal stored profile credentials)'
     ]
   }
