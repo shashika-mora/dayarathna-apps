@@ -48,7 +48,7 @@
     <header style="border-bottom: 1px solid var(--line); padding-bottom: 36px; margin-bottom: 40px;">
       <div style="display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #9da9bf; margin-bottom: 16px;">
         <span>System Utility</span>
-        <span style="color: var(--lime);">In development</span>
+        <span style="color: var(--lime);">Completed / Stable CLI</span>
       </div>
 
       <h1 style="font-size: clamp(38px, 5.5vw, 64px); font-weight: 500; letter-spacing: -0.05em; line-height: 1.1; margin: 0 0 16px; color: #f1f4fc;">
@@ -60,20 +60,25 @@
       </p>
 
       <p style="font-size: 15px; line-height: 1.7; color: #9da9bf; max-width: 800px; margin: 0 0 24px;">
-        A Windows batch utility that queries the active system power plan and switches between Balanced, High Performance, and Power Saver schemes using Windows powercfg.
+        A fast, dependency-free Windows batch CLI utility using native powercfg to switch power plans instantly—crafted for battery preservation during power cuts in Sri Lanka and performance tuning for gaming and development.
       </p>
 
-      <div class="project-tags" style="margin: 0;"><span>Windows Batch</span><span>powercfg.exe</span></div>
+      <div class="project-tags" style="margin: 0;"><span>Windows Batch (.bat)</span><span>powercfg.exe</span><span>CLI Utility</span><span>Offline</span></div>
     </header>
+
+    <!-- Preview Graphic -->
+    <div style="margin-bottom: 40px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: #080d16; box-shadow: 0 12px 36px rgba(0,0,0,0.5);">
+      <img src="/public/apps/smart-power-manager/preview.svg" alt="SmartPowerManager CLI Preview" style="width: 100%; height: auto; max-height: 420px; object-fit: cover; display: block;">
+    </div>
 
     <!-- Distribution Box -->
     <div class="distribution-box" style="margin-bottom: 48px;">
       <div class="dist-info">
         <h4>Distribution &amp; Availability</h4>
-        <p>No compiled installer is released. The interactive switch script can be run directly from the GitHub repository.</p>
+        <p>Standalone portable Windows batch script (.bat). Zero build dependencies or runtime installation required—clone the repository or download power_switch.bat directly to run.</p>
       </div>
       <div class="dist-actions">
-        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted); padding: 8px 16px; border: 1px solid var(--line); border-radius: 20px;">Download not available yet</span>
+        <a href="https://raw.githubusercontent.com/shashika-mora/power-plan-switcher/main/power_switch.bat" target="_blank" rel="noopener noreferrer" class="button primary" style="font-size: 12px; padding: 11px 22px;">Download script ↗</a>
         <a href="https://github.com/shashika-mora/power-plan-switcher" target="_blank" rel="noopener noreferrer" class="button secondary" style="font-size: 12px; padding: 11px 22px;">Source code ↗</a>
       </div>
     </div>
@@ -85,14 +90,22 @@
           <div style="margin-bottom: 36px;">
         <h2 style="font-size: 20px; font-weight: 600; color: #f1f4fc; margin-bottom: 16px;">Implemented Capabilities</h2>
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
-          <li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Active plan detection: queries the current active scheme using powercfg /getactivescheme</span></li><li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Preset switching: provides quick options for Balanced (SCHEME_BALANCED), High Performance (SCHEME_MIN), and Power Saver (SCHEME_MAX)</span></li><li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Zero persistent background process: executes only on demand with no background service</span></li>
+          <li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Active scheme detection: queries the current active power plan on launch using native powercfg /getactivescheme</span></li>
+          <li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Instant preset switching: direct numeric options for Balanced (SCHEME_BALANCED), High Performance (SCHEME_MIN), and Power Saver (SCHEME_MAX)</span></li>
+          <li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Sri Lanka power cut optimization: quickly throttles CPU power limits to maximize laptop battery runtime during unexpected blackouts</span></li>
+          <li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Gaming &amp; compilation boost: instantly unlocks maximum CPU clock frequency and system responsiveness for heavy workloads</span></li>
+          <li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Zero persistent overhead: pure on-demand Windows batch script with no background daemon or registry clutter</span></li>
+          <li style="border-radius: 10px; border: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02); padding: 14px 18px; font-size: 14px; color: #b8c3d6; line-height: 1.6; display: flex; gap: 12px;"><span style="color: #c7f44a; font-weight: bold;">•</span><span>Unicode &amp; ASCII branding: clean console UI loop with formatted maintainer banner and input validation</span></li>
         </ul>
       </div>
           <div style="margin-bottom: 36px;">
         <h2 style="font-size: 20px; font-weight: 600; color: #f1f4fc; margin-bottom: 16px;">Installation &amp; Usage</h2>
         <div style="border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); background: #080d16; padding: 22px;">
           <ol style="margin: 0; padding-left: 20px; font-family: var(--mono); font-size: 13px; color: #b8c3d6; display: flex; flex-direction: column; gap: 10px;">
-            <li>Clone or download https://github.com/shashika-mora/power-plan-switcher</li><li>Open the folder on Windows 10 or 11</li><li>Run power_switch.bat to launch the interactive selector</li><li>Enter option 1 for Balanced, 2 for High Performance, 3 for Power Saver, or 4 to exit</li>
+            <li>Clone or download https://github.com/shashika-mora/power-plan-switcher or download power_switch.bat directly</li>
+            <li>Place power_switch.bat anywhere on your Windows 10 or 11 system</li>
+            <li>Double-click power_switch.bat or run it from Command Prompt / Windows Terminal</li>
+            <li>Enter option 1 for Balanced, 2 for High Performance, 3 for Power Saver, or 4 to exit</li>
           </ol>
         </div>
       </div>
@@ -105,7 +118,7 @@
             <div class="spec-list">
               <div class="spec-row"><span class="spec-label">Platform</span><span class="spec-val">Windows</span></div>
               <div class="spec-row"><span class="spec-label">Category</span><span class="spec-val">System Utility</span></div>
-              <div class="spec-row"><span class="spec-label">Status</span><span class="spec-val" style="color: var(--lime);">In development</span></div>
+              <div class="spec-row"><span class="spec-label">Status</span><span class="spec-val" style="color: var(--lime);">Completed / Stable CLI</span></div>
               <div class="spec-row"><span class="spec-label">License</span><span class="spec-val">Public Repository (Unlicensed)</span></div>
               <div style="padding-top: 8px;">
         <span style="color: #9da9bf; font-size: 12px;">Requirements</span>

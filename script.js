@@ -72,27 +72,32 @@ const APPS_DATA = {
     name: 'SmartPowerManager',
     tagline: 'Windows power scheme switcher via native powercfg.',
     description:
-      'A Windows batch utility that queries the active system power plan and switches between Balanced, High Performance, and Power Saver schemes using Windows powercfg.',
+      'A fast, dependency-free Windows batch CLI utility using native powercfg to switch power plans instantly—crafted for battery preservation during power cuts in Sri Lanka and performance tuning for gaming and development.',
     category: 'System Utility',
     platforms: ['Windows'],
-    status: 'In development',
-    downloadAvailable: false,
+    status: 'Completed / Stable CLI',
+    image: 'public/apps/smart-power-manager/preview.svg',
+    downloadAvailable: true,
+    downloadUrl: 'https://raw.githubusercontent.com/shashika-mora/power-plan-switcher/main/power_switch.bat',
     downloadNote:
-      'No compiled installer is released. The interactive switch script can be run directly from the GitHub repository.',
+      'Standalone portable Windows batch script (.bat). Zero build dependencies or runtime installation required—clone the repository or download power_switch.bat directly to run.',
     sourceUrl: 'https://github.com/shashika-mora/power-plan-switcher',
     supportUrl: 'https://github.com/shashika-mora/power-plan-switcher/issues',
     license: 'Public Repository (Unlicensed)',
-    techStack: ['Windows Batch', 'powercfg.exe'],
+    techStack: ['Windows Batch (.bat)', 'powercfg.exe', 'CLI Utility', 'Offline'],
     features: [
-      'Active plan detection: queries the current active scheme using powercfg /getactivescheme',
-      'Preset switching: provides quick options for Balanced (SCHEME_BALANCED), High Performance (SCHEME_MIN), and Power Saver (SCHEME_MAX)',
-      'Zero persistent background process: executes only on demand with no background service'
+      'Active scheme detection: queries the current active power plan on launch using native powercfg /getactivescheme',
+      'Instant preset switching: direct numeric options for Balanced (SCHEME_BALANCED), High Performance (SCHEME_MIN), and Power Saver (SCHEME_MAX)',
+      'Sri Lanka power cut optimization: quickly throttles CPU power limits to maximize laptop battery runtime during unexpected blackouts',
+      'Gaming & compilation boost: instantly unlocks maximum CPU clock frequency and system responsiveness for heavy workloads',
+      'Zero persistent overhead: pure on-demand Windows batch script with no background daemon or registry clutter',
+      'Unicode & ASCII branding: clean console UI loop with formatted maintainer banner and input validation'
     ],
     installation: [
-      'Clone or download https://github.com/shashika-mora/power-plan-switcher',
-      'Open the folder on Windows 10 or 11',
-      'Run power_switch.bat to launch the interactive selector',
-      'Enter option 1 for Balanced, 2 for High Performance, 3 for Power Saver, or 4 to exit'
+      'Clone or download https://github.com/shashika-mora/power-plan-switcher or download power_switch.bat directly',
+      'Place power_switch.bat anywhere on your Windows 10 or 11 system',
+      'Double-click power_switch.bat or run it from Command Prompt / Windows Terminal',
+      'Enter 1 for Balanced, 2 for High Performance, 3 for Power Saver, or 4 to Exit'
     ],
     requirements: [
       'Windows 10 or Windows 11',
